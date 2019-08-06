@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/styles.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"/>
+    <title>Web Profil</title>
+    <script type="text/javascript">
+    </script>
+  </head>
+  <body>
+
+    <section id="header">
+      <h2 class="headtext"><div class="typewriter">Jago IT Pinter Ngaji!</div></h2>
+      <img src="./images/coder.png" class="headimg" />
+      <center><img src="./images/arrow-bottom.png" class="down" onclick="toContent()"></center>
+      <div class="triangle"></div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="card">
+          <div class="photo">
+            <center><img src="./images/profil.jpg"></center>
+          </div>
+          <div class="box">
+            <div class="tab">
+              <div class="nav">
+
+                  <button class="tablink active" onclick="openData(event, 'biodata')">BIODATA</button>
+                  <button class="tablink" onclick="openData(event, 'pengalaman')">PENGALAMAN</button>
+                  <button class="tablink" onclick="openData(event, 'portofolio')">PORTOFOLIO</button>
+              </div>
+            </div>
+            <div class="datatab" id="biodata" style="display: block">
+              <table>
+                <tr>
+                  <td>Nama</td>
+                  <td>:</td>
+                  <td>Rizqi Aldi Prayugo</td>
+                </tr>
+                <tr>
+                  <td>Tanggal Lahir</td>
+                  <td>:</td>
+                  <td>Kebumen, 25 Juli 2001</td>
+                </tr>
+                <tr>
+                  <td>Alamat</td>
+                  <td>:</td>
+                  <td>Kebumen, Jawa Tengah, Indonesia, 54365</td>
+                </tr>
+                <tr>
+                  <td>Nomor HP</td>
+                  <td>:</td>
+                  <td><a href="https://wa.me/6285725882711" target="_blank">0857-2588-2711</a></td>
+                </tr>
+                <tr>
+                  <td>Minat</td>
+                  <td>:</td>
+                  <td>Networking dan Programming</td>
+                </tr>
+              </table>
+            </div>
+            <div class="datatab" id="pengalaman">
+                <table>
+                  <tr>
+                    <td>1.</td>
+                    <td>Juara 3 LKS IT Networking 2018 Tingkat Jawa Tengah</td>
+                  </tr>
+                  <tr>
+                    <td>2.</td>
+                    <td>Juara 3 Network Competition Techcomfets 2019 Tingkat Jawa Tengah dan DIY</td>
+                  </tr>
+                </table>
+            </div>
+            <div class="datatab" id="portofolio">
+              <a href="https://pay.tokomini.net" target="_blank"><img src="./images/pay.png" width="300px" /></a>
+              <br>
+              <a href="https://www.webiptek.com" target="_blank"><img src="./images/wic.png" width="300px" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="footline"></div>
+      <p>Created by <font color="red">❤</font> NN-Code</p>
+    </section>
+
+    <script type="text/javascript">
+      function toContent(){
+        document.getElementById("main").scrollIntoView()
+      }
+      function openData(evt, target) {
+        var i;
+        var datatab = document.getElementsByClassName("datatab");
+        for (i = 0; i < datatab.length; i++) {
+          datatab[i].style.display = "none";
+        }
+        var tablink = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablink.length; i++) {
+          tablink[i].className = tablink[i].className.replace(" active", "");
+        }
+        document.getElementById(target).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
+</html>
